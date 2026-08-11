@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Database\Factories\NewsFactory;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -20,6 +21,7 @@ use Illuminate\Support\Str;
  * @property Carbon|null $updated_at
  * @property-read string $excerpt
  */
+#[Fillable(['title', 'content', 'published_at'])]
 class News extends Model
 {
     /** @use HasFactory<NewsFactory> */
