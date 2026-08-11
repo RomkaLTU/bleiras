@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
 import { ArrowLeft } from '@lucide/vue';
+import { computed } from 'vue';
 import { home } from '@/routes';
 
 type NewsItem = {
@@ -14,9 +15,11 @@ const { news } = defineProps<{
     news: NewsItem;
 }>();
 
-const publishedAt = new Date(news.published_at).toLocaleDateString(undefined, {
-    dateStyle: 'long',
-});
+const publishedAt = computed(() =>
+    new Date(news.published_at).toLocaleDateString(undefined, {
+        dateStyle: 'long',
+    }),
+);
 </script>
 
 <template>
