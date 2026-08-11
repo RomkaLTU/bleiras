@@ -2,13 +2,14 @@
 import { Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import { Button } from '@/components/ui/button';
-import { dashboard, home, login } from '@/routes';
+import { home, login } from '@/routes';
+import { index } from '@/routes/admin/news';
 
 const page = usePage();
 
 const accountLink = computed(() =>
     page.props.auth.user
-        ? { href: dashboard(), label: 'Dashboard' }
+        ? { href: index(), label: 'Admin' }
         : { href: login(), label: 'Log in' },
 );
 </script>
