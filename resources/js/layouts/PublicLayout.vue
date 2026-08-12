@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
+import PublicFooter from '@/components/PublicFooter.vue';
 import { Button } from '@/components/ui/button';
 import { home, login } from '@/routes';
 import { index } from '@/routes/admin/news';
@@ -33,5 +34,6 @@ const accountLink = computed(() =>
         <main class="mx-auto w-full max-w-3xl flex-1 px-6 py-10">
             <slot />
         </main>
+        <PublicFooter />
     </div>
 </template>
